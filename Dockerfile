@@ -1,7 +1,7 @@
-FROM node:15.14.0-alpine
+FROM registry.semaphoreci.com/node:12
 RUN mkdir -p /opt/app
 WORKDIR /opt/app
-RUN adduser -S app
+RUN adduser app
 COPY addressbook/ .
 RUN npm install
 RUN chown -R app /opt/app
